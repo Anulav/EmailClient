@@ -1,0 +1,30 @@
+Intellij related issues faced:
+   1. Check the bytecode version in the settings of Project. May give errors if the version doesn't match the code.
+   2. For each library/package addition do add/mention in module-info.java
+   3. SceneBuilder plugin in Intellij was not working properly. Maybe configuration related issue. Better have an external
+      SceneBuilder application installed and configure Intellij to run it.
+
+
+Uses MVC for each view file(fxml) a controller is to be created.
+To make GUI responsive we use Anchor Pane constraints.
+    For communication between controller we can Singleton classes. Not sure :( how.
+    Mine resource said it is better to have an abstract base controller.
+
+My resource suggests using a ViewFactory for various Windows.
+    Also the actions such as closing of a stage, creation of a stage is done via handler functions for various elements
+    inside controller of various windows. For non-button we do need to have fx-ids but for button only onAction methods
+    are sufficient.
+    Font size picker inside
+         fontSizePicker.valueProperty().addListener(((observable, oldValue, newValue) -> {
+                    fontSizePicker.setValue(newValue.intValue());
+                }));
+
+         Here valueProperty is a ObservableValue and in addListener we are passing a ChangeListener.
+         Must be implementing the Observer pattern. Don't know yet :|
+         Added method with switch case in ENUM to return, clever.
+For mail we need to add java mail and activation jars.
+
+MultiThreading in JavaFx
+    JavaFx has an interface called as Service which is similar to Executor Service.
+    Multithreading can make an nonBlocking UI.
+
